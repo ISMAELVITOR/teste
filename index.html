@@ -5,46 +5,148 @@
   <title>App Igreja - Devocionais</title><!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script><!-- Canva SDKs -->
   <script src="/_sdk/element_sdk.js"></script>
-  <style>
-    body {
-      box-sizing: border-box;
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 22px !important; /* 🔥 AUMENTA TUDO */
+  }
+
+  body {
+    font-family: system-ui, Arial, sans-serif;
+  }
+
+  /* Scroll interno */
+  .inner-scroll {
+    overflow-y: auto;
+    padding-bottom: 4rem !important;
+  }
+
+  /* ----------------------------- */
+  /* 🔥 MODO ULTRA MOBILE */
+  /* ----------------------------- */
+  @media (max-width: 600px) {
+
+    /* HEADER MAIOR */
+    header, .top-bar {
+      padding: 1.8rem 1.6rem !important;
     }
 
-    html, body {
-      height: 100%;
-      width: 100%;
-      margin: 0;
-      padding: 0;
+    #home-title,
+    #member-title,
+    #bible-title {
+      font-size: 2rem !important; /* Títulos gigantes */
+      font-weight: 700;
     }
 
-    .app-wrapper {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    #home-subtitle {
+      font-size: 1.4rem !important;
     }
 
-    /* Ícones com foco acessível */
-    .focus-outline:focus-visible {
-      outline: 3px solid rgba(255, 255, 255, 0.9);
-      outline-offset: 3px;
+    /* ----------------------------- */
+    /* BOTÕES GIGANTES */
+    /* ----------------------------- */
+    button {
+      padding: 1.4rem 1.6rem !important;
+      font-size: 1.5rem !important;
+      border-radius: 18px !important;
     }
 
-    /* Scroll suave dentro das telas internas se necessário */
-    .inner-scroll {
-      overflow-y: auto;
-      scrollbar-width: thin;
+    /* Botões redondos (ícones) */
+    .w-9.h-9,
+    .w-9,
+    .h-9 {
+      width: 70px !important;
+      height: 70px !important;
     }
 
-    .inner-scroll::-webkit-scrollbar {
-      width: 6px;
+    svg {
+      width: 40px !important;
+      height: 40px !important;
     }
-    .inner-scroll::-webkit-scrollbar-track {
-      background: transparent;
+
+    /* ----------------------------- */
+    /* DEVOCIONAIS – CARDS MUITO MAIORES */
+    /* ----------------------------- */
+    .devotional-card,
+    button[data-devotional-id] {
+      padding: 1.6rem !important;
     }
-    .inner-scroll::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.4);
-      border-radius: 9999px;
+
+    button[data-devotional-id] p {
+      font-size: 1.6rem !important;
     }
-  </style>
-  <style>@view-transition { navigation: auto; }</style>
+
+    button[data-devotional-id] .text-xs {
+      font-size: 1.3rem !important;
+    }
+
+    /* Imagem dos devocionais (aumentada) */
+    button[data-devotional-id] .w-20,
+    button[data-devotional-id] .h-20 {
+      width: 120px !important;
+      height: 120px !important;
+    }
+
+    /* ----------------------------- */
+    /* TEXTO DA BÍBLIA GIGANTE */
+    /* ----------------------------- */
+    #bible-text {
+      font-size: 1.55rem !important;
+      line-height: 2.2rem !important;
+      padding: 1rem !important;
+    }
+
+    /* Seletores de livro/capítulo */
+    select {
+      font-size: 1.4rem !important;
+      padding: 1.1rem !important;
+      border-radius: 14px !important;
+    }
+
+    label {
+      font-size: 1.3rem !important;
+    }
+
+    /* ----------------------------- */
+    /* CARDS DE MEMBRO */
+    /* ----------------------------- */
+    .member-card {
+      padding: 2rem !important;
+      border-radius: 20px !important;
+    }
+
+    .member-card p {
+      font-size: 1.45rem !important;
+    }
+
+    .member-card .text-2xl {
+      font-size: 2.6rem !important; /* Número gigante */
+    }
+
+    /* ----------------------------- */
+    /* GRID MAIS ESPAÇADO */
+    /* ----------------------------- */
+    .grid {
+      gap: 1.6rem !important;
+    }
+
+    /* ----------------------------- */
+    /* ESPAÇAMENTO GERAL */
+    /* ----------------------------- */
+    .px-4, .px-5 {
+      padding-left: 2rem !important;
+      padding-right: 2rem !important;
+    }
+    .py-3, .py-4 {
+      padding-top: 1.6rem !important;
+      padding-bottom: 1.6rem !important;
+    }
+  }
+</style>
+
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="w-full h-full">
